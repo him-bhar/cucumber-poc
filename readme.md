@@ -1,10 +1,8 @@
-h1.Behavioral Driven Development and testing via Cucumber
+# Behavioral Driven Development and testing via Cucumber
 
-{toc}
-
-h2.Cucumber integration with Maven.
+## Cucumber integration with Maven.
 Following maven dependencies are required:
-{code}
+```xml
 	<dependency>
 		<groupId>info.cukes</groupId>
 		<artifactId>cucumber-junit</artifactId>
@@ -23,12 +21,12 @@ Following maven dependencies are required:
 		<version>${cucumber.version}</version>
 		<scope>test</scope>
 	</dependency>
-{code}
+```
 
 
 
-h2.Cucumber reporting plugin integration with Maven
-{code}
+## Cucumber reporting plugin integration with Maven
+```xml
 	<plugin>
 		<groupId>org.apache.maven.plugins</groupId>
 		<artifactId>maven-surefire-plugin</artifactId>
@@ -60,13 +58,12 @@ h2.Cucumber reporting plugin integration with Maven
 			</execution>
 		</executions>
 	</plugin>
-{code}
+```
 
-{note}
-As you can see the test cases are explicitly ignored in surefire plugin, its required so that JUnit runner doesn't execute the cucumber based tests. As it will not actually executed the tests. With this cucumber actually runs these tests, the way they are supposed to be.
-{note}
+> As you can see the test cases are explicitly ignored in surefire plugin, its required so that JUnit runner doesn't execute the cucumber based tests. As it will not actually executed the tests. With this cucumber actually runs these tests, the way they are supposed to be.
 
-||Plugin property||Description||
+|Plugin property|Description|
+|---|---|
 |projectName|When are report is generated report will contain the project name as what is mentioned here. (Cosmetic only)|
 |cucumberOutput|The location where cucumber generated json files are kept. Used for generating the reporting via reporting plugin|
 |outputDirectory|The location where reporting plugin generated HTML files will be saved (Output of the reporting plugin)|
